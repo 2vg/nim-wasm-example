@@ -22,9 +22,9 @@ task installEmcc, "setup emscripten(install to <home directory>/emsdk)":
 task buildwasm, "build nim_wasm_example.nim":
   exec "nim c -d:release -d:emscripten -o: src/nim_wasm_example.js src/nim_wasm_example.nim"
 
-task exec, "execute src/test.js":
+task execwasm, "execute src/test.js":
   exec "node src/test.js"
 
 task buildrun, "build and execute":
-  exec "nim c -d:release -d:emscripten src/nim_wasm_example.nim"
-  exec "node src/test.js"
+  exec "nimble buildwasm"
+  exec "nimble execwasm"
