@@ -20,7 +20,7 @@ task installEmcc, "setup emscripten(install to <home directory>/emsdk)":
   exec "source ./emsdk_env.sh"
 
 task buildwasm, "build nim_wasm_example.nim":
-  exec "nim c -d:release -d:emscripten -o: src/nim_wasm_example.js src/nim_wasm_example.nim"
+  exec "nim c -d:release -d:emscripten -o:src/nim_wasm_example.js src/nim_wasm_example.nim"
 
 task execwasm, "execute src/test.js":
   exec "node src/test.js"
