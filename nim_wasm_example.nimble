@@ -14,7 +14,7 @@ requires "nim >= 0.19.0"
 
 task installEmcc, "setup emscripten(install to <home directory>/emsdk)":
   exec "git clone https://github.com/emscripten-core/emsdk.git ~/emsdk"
-  cd "~/emsdk"
+  cd getEnv("HOME") & "/emsdk"
   exec "./emsdk install latest"
   exec "./emsdk activate latest"
   exec "source ./emsdk_env.sh"
