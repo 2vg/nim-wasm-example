@@ -1,4 +1,4 @@
-const Module = require('./nim-wasm-example.js')
+const Module = require('./nim_wasm_example.js')
 
 Module['onRuntimeInitialized'] = onRuntimeInitialized
 
