@@ -2,7 +2,7 @@
 
 version       = "0.1.0"
 author        = "momf"
-description   = "example \"\"\x1B[DNim to wasm\"\x1B[C\x1B[C\x1B[C\x1B[C\x1B[C\x1B[C\x1B[C\x1B[C\x1B[C"
+description   = "example \"Nim to wasm\""
 license       = "MIT"
 srcDir        = "src"
 bin           = @["nim_wasm_example"]
