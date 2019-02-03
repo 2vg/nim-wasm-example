@@ -1,1 +1,3 @@
 nimcache/
+src/nim_wasm_example.js
+src/nim_wasm_example.wasm
