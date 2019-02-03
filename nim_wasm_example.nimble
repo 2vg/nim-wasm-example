@@ -17,7 +17,7 @@ task installEmcc, "setup emscripten(install to <home directory>/emsdk)":
   cd getEnv("HOME") & "/emsdk"
   exec "./emsdk install latest"
   exec "./emsdk activate latest"
-  exec "source ./emsdk_env.sh"
+  exec "source ~/emsdk/emsdk_env.sh"
 
 task buildwasm, "build nim_wasm_example.nim":
   exec "nim c -d:release -d:emscripten -o:src/nim_wasm_example.js src/nim_wasm_example.nim"
