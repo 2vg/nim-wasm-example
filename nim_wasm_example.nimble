@@ -2,15 +2,17 @@
 
 version       = "0.1.0"
 author        = "momf"
-description   = "example \"Nim to wasm\""
+description   = "example 'Nim to wasm'"
 license       = "MIT"
 srcDir        = "src"
 bin           = @["nim_wasm_example"]
 
 
 # Dependencies
+requires "nim >= 1.0.4"
 
-requires "nim >= 0.19.0"
+
+import distros
 
 task installEmcc, "setup emscripten(install to <home directory>/emsdk)":
   exec "git clone https://github.com/emscripten-core/emsdk.git ~/emsdk"
@@ -18,6 +20,7 @@ task installEmcc, "setup emscripten(install to <home directory>/emsdk)":
   exec "./emsdk install latest"
   exec "./emsdk activate latest"
   exec "source ~/emsdk/emsdk_env.sh"
+  foreignDep "java" # ERROR: fatal: closure compiler is not configured correctly. java does not seem to exist, required for closure compiler.
 
 task buildwasm, "build nim_wasm_example.nim":
   exec "nim c -d:release -d:emscripten -o:src/nim_wasm_example.js src/nim_wasm_example.nim"
